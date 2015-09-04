@@ -1,0 +1,6 @@
+*.aux
+*.log
+*.gz
+*.thm
+*.backup
+*.kate-swp
