@@ -1,0 +1,988 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage[scaled=0.875]{helvet} 
+\renewcommand{\ttdefault}{lmtt} 
+\usepackage{amsmath,amssymb,makeidx}
+\usepackage[normalem]{ulem}
+\usepackage{fancybox,graphicx}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{ulem}
+\usepackage{dcolumn}
+\usepackage{textcomp}
+\usepackage{diagbox}
+\usepackage{tabularx}
+\usepackage{lscape}
+\newcommand{\euro}{\eurologo{}}
+\usepackage{variations}
+%Tapuscrit : Denis Vergès
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pstricks-add}
+\setlength\paperheight{297mm}
+\setlength\paperwidth{210mm}
+\setlength{\textheight}{25cm}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+\newcommand{\vect}[1]{\mathchoice%
+{\overrightarrow{\displaystyle\mathstrut#1\,\,}}%
+{\overrightarrow{\textstyle\mathstrut#1\,\,}}%
+{\overrightarrow{\scriptstyle\mathstrut#1\,\,}}%
+{\overrightarrow{\scriptscriptstyle\mathstrut#1\,\,}}}
+\def\Oij{$\left(\text{O},~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O},~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\setlength{\voffset}{-1,5cm}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{%
+pdfauthor = {APMEP},
+pdfsubject = {Baccalauréat S},
+pdftitle = {Métropole 22 juin 2015},
+allbordercolors = white,
+pdfstartview=FitH}   
+\thispagestyle{empty}
+\usepackage[frenchb]{babel}
+\usepackage[np]{numprint}
+\begin{document}
+\setlength\parindent{0mm}
+\marginpar{\rotatebox{90}{\textbf{A. P{}. M. E. P{}.}}}
+\rhead{\textbf{A. P{}. M. E. P{}.}}
+\lhead{\small Correction du baccalauréat S}
+\lfoot{\small{Métropole}}
+\rfoot{\small{22 juin 2015}}
+\renewcommand \footrulewidth{.2pt}
+\pagestyle{fancy}
+\thispagestyle{empty}
+\begin{center} {\large{\textbf{\decofourleft~Corrigé du baccalauréat S  Métropole 22 juin 2015~\decofourright
+}}} 
+
+\end{center}
+
+\vspace{0,5cm}
+
+\textbf{\textsc{Exercice 1 \hfill 6 points}}
+
+%\textbf{Commun à tous les candidats} 
+%
+%\medskip
+%
+%\emph{Les résultats des probabilités seront arrondis à $10^{-3}$ près.}
+%
+%\bigskip
+
+\textbf{Partie 1}
+
+\medskip
+
+\begin{enumerate}
+\item %Soit $X$ une variable aléatoire qui suit la loi exponentielle de paramètre $\lambda$, où $\lambda$ est un réel strictement positif donné.
+
+%On rappelle que la densité de probabilité de cette loi est la fonction $f$  définie sur
+%$[0~;~+ \infty[$ par 
+%\[f(x) = \lambda\text{e}^{- \lambda x}.\]
+
+	\begin{enumerate}
+		\item Soient $c$ et $d$ deux réels tels que $0 \leqslant c < d$.
+		
+%Démontrer que la probabilité $P( c \leqslant X \leqslant d)$ vérifie $P(c \leqslant X \leqslant d) = \text{e}^{- \lambda c}   - \text{e}^{- \lambda d}$.
+Par définition, $P(c\leqslant X\leqslant d)=\int_c^df(x)\text{ d}x=\int_c^d\lambda\mathrm{e}^{-\lambda x}=\left[-\mathrm{e}^{-\lambda x}\right]_c^d\\
+=-\mathrm{e}^{-\lambda d}-\left(-\mathrm{e}^{-\lambda c}\right)=\boxed{\textcolor{red}{\mathrm{e}^{-\lambda c}-\mathrm{e}^{-\lambda d}}}$.
+
+		\item %Déterminer une valeur de $\lambda$ à $10^{-3}$ près de telle sorte que la probabilité $P(X > 20)$ soit égale à 0,05.
+		$P(X>20)=0,05\iff P(0\leqslant X\leqslant 20)=0,95\iff \mathrm{e}^{-\lambda\times 0}-\mathrm{e}^{-\lambda\times 20}=0,95\iff 1-\mathrm{e}^{-20\lambda}=0,95\iff \mathrm{e}^{-20\lambda}=0,05\iff -20\lambda=\ln 0,05\iff \lambda=\dfrac{\ln 0,05}{-20} \approx \boxed{\textcolor{red}{0,150}}$.
+		
+		\item %Donner l'espérance de la variable aléatoire $X$
+		On sait que l'espérance d'une loi exponentielle est $E(X)=\dfrac{1}{\lambda}\approx \boxed{\textcolor{red}{6,676}}$.
+
+\medskip
+		
+\textbf{Dans la suite de l'exercice on prend } \boldmath$\lambda = 0,15$\unboldmath.
+		\item %Calculer $P(10 \leqslant X \leqslant 20)$.
+		$P(10 \leqslant X \leqslant 20)=\mathrm{e}^{-10\lambda}-\mathrm{e}^{-20\lambda}=\mathrm{e}^{-1,5}-\mathrm{e}^{-3}\approx \boxed{\textcolor{red}{0,173}}$.
+		
+		\item %Calculer la probabilité de l'évènement $(X > 18)$.
+		$P(X>18)=1-P(0\leqslant X\leqslant 18)=\mathrm{e}^{-18\lambda}=\mathrm{e}^{-27}\approx \boxed{\textcolor{red}{0,067}}$.
+	\end{enumerate}
+	
+\item Soit $Y$ une variable aléatoire qui suit la loi normale d'espérance $16$ et d'écart type $1,95$.
+	\begin{enumerate}
+		\item %Calculer la probabilité de l'évènement $(20 \leqslant Y \leqslant 21)$.
+		$P(20 \leqslant Y \leqslant 21)\approx \boxed{\textcolor{red}{0,015}}$.
+		
+		\item %Calculer la probabilité de l'évènement $(Y < 11) \cup (Y > 21)$.
+		$P((Y < 11) \cup (Y > 21))=1-P(11\leqslant Y\leqslant 21)\approx \boxed{\textcolor{red}{0,010}}$.
+	\end{enumerate}
+\end{enumerate}
+
+\bigskip
+	
+\textbf{Partie 2}
+	
+	\medskip
+	
+%Une chaîne de magasins souhaite fidéliser ses clients en offrant des bons d'achat à ses clients
+%privilégiés. Chacun d'eux reçoit un bon d'achat de couleur verte ou rouge sur lequel est inscrit un montant.
+%	
+%Les bons d'achats sont distribués de façon à avoir, dans chaque magasin, un quart de bons rouges et trois quarts de bons verts.
+%	
+%Les bons d'achat verts prennent la valeur de $30$~euros avec une probabilité égale à $0,067$ ou des valeurs comprises entre $0$ et $15$~euros avec des probabilités non précisées ici.
+%	
+%De façon analogue, les bons d'achat rouges prennent les valeurs $30$ ou $100$~euros avec des probabilités respectivement égales à $0,015$ et $0,010$ ou des valeurs comprises entre $10$ et $20$~euros avec des probabilités non précisées ici.
+
+\medskip
+
+\begin{enumerate}
+\item %Calculer la probabilité d'avoir un bon d'achat d'une valeur supérieure ou égale à $30$~euros sachant qu'il est rouge.
+Notons :
+\begin{enumerate}[$\bullet$]
+
+\item R l'évènement \og{}le bon d'achat est rouge\fg{}.
+
+\item V l'évènement \og{}le bon d'achat est vert\fg{}
+
+\item T : l'évènement \og{}avoir un un bon d'achat de trente \euro\fg{}.
+
+\item C : l'évènement \og{}avoir un un bon d'achat de cent \euro\fg{}.
+
+\item A : l'évènement \og{}avoir un un bon d'achat d'une autre valeur\fg{}.
+
+\item S : l'évènement \og{}avoir un un bon d'achat d'un montant supérieur ou égal à 30 \euro\fg{}.
+
+\end{enumerate}
+,L'arbre correspondant est alors : 
+\begin{center}
+%\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eps,pst-fill,pst-node,pst-math}
+\psset{nodesep=0mm,levelsep=50mm,treesep=10mm}
+\pstree[treemode=R]{\Tdot}
+{
+\pstree
+{\Tdot~[tnpos=a]{$V$}\taput{ $0,75$}}
+{
+\Tdot~[tnpos=r]{$T$}\taput{ $0,067$}
+\Tdot~[tnpos=r]{autre montant}\tbput{ $0,933$}
+}
+\pstree
+{\Tdot~[tnpos=a]{$R$}\tbput{ $0,25$}}
+{
+\Tdot~[tnpos=r]{$T$}\taput{ $0,015$}
+\Tdot~[tnpos=r]{$C$}\taput{ $0,010$}
+\Tdot~[tnpos=r]{autre montant}\tbput{ $0,975$}
+}
+}
+
+
+\end{center}
+On a : $P_R(S)=P_R(T\cup C)=p_R(T)+P_R(C)=0,015+0,010 = \boxed{\textcolor{red}{0,025}}$.
+
+\item %Montrer qu'une valeur approchée à $10^{-3}$ près de la probabilité d'avoir un bon d'achat d'une valeur supérieure ou égale à $30$~euros vaut $0,057$.
+$P(S) = P(R\cap S)+ P(V\cap S)=0,75\times 0,067+0,25\times 0,025 = 0,0566\approx \boxed{\textcolor{red}{0,057}}$.
+
+
+\textbf{Pour la question suivante, on utilise cette valeur.}
+
+\item %Dans un des magasins de cette chaîne, sur $200$ clients privilégiés, $6$ ont reçu un bon d'achat d'une valeur supérieure ou égale à $30$~\euro.
+
+%\smallskip
+%
+%Le directeur du magasin considéré estime que ce nombre est insuffisant et doute de la répartition
+%au hasard des bons d'achats dans les différents magasins de la chaîne.
+
+%Ses doutes sont-ils justifiés ?
+La probabilité d'avoir un bon d'un montant supérieur ou égal à 30 \euro est $p=0,057$.
+
+\noindent La fréquence observée est $f=\dfrac{6}{200}=\dfrac{3}{100}=0,03$.
+
+\noindent La taille de léchantillon est $n=200$.
+
+\noindent On a $n=200\geqslant 30$ ; $np=11,4\geqslant 5$ et $n(1-p)=188,6\geqslant 5$.
+
+\noindent On peut donc utiliser la formule donnant l'intervalle de fluctuation asymptotique au seuil de 95\:\%.
+
+$I_{200}=\left[p-1,96\times \dfrac{\sqrt{p(1-p)}}{\sqrt{n}}~;~p+1,96\times \dfrac{\sqrt{p(1-p)}}{\sqrt{n}}\right]\approx \boxed{\textcolor{red}{[0,024~;~0,090]}}$.
+
+\noindent $f=0,03\in I$. Les doutes du directeur du magasin ne sont donc pas justifiés au seuil de confiance de 95\:\%.
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{\textsc{Exercice 2 \hfill 3 points}}
+
+\textbf{Commun à tous les candidats} 
+
+\medskip
+
+Dans un repère orthonormé (O,~I,~J,~K) d'unité 1 cm, on considère les points A$(0~;~-1~;~5)$,
+
+B$(2~;~-1~;~5)$, C$(11~;~0~;~1)$, D$(11~;~4~;~4)$.
+
+%\medskip
+%
+%Un point $M$ se déplace sur la droite (AB) dans le sens de A vers B à la vitesse de 1~cm par seconde.
+%
+%Un point $N$ se déplace sur la droite (CD) dans le sens de C vers D à la vitesse de 1~cm par seconde.
+%
+%À l'instant $t = 0$ le point $M$ est en A et le point $N$ est en C.
+%
+%On note $M_t$ et $N_t$ les positions des points $M$ et $N$ au bout de $t$ secondes, $t$ désignant un nombre réel positif.
+%
+%On admet que $M_t$ et $N_t$, ont pour coordonnées : $M_t(t~;~-1~;~5)$ et $N_t(11~;~0,8t~;~1 + 0,6 t)$.
+%
+%\medskip
+%
+%\emph{Les questions $1$ et $2$ sont indépendantes.}
+%
+%\medskip
+
+\begin{enumerate}
+\item 
+	\begin{enumerate}
+		\item %La droite (AB) est parallèle à l'un des axes (OI), (OJ) ou (OK). Lequel ?
+		Un vecteur directeur de la droite (AB) est $\overrightarrow{\text{AB}}\begin{pmatrix}2\\0\\0\end{pmatrix}=2\overrightarrow{\text{OI}}$.
+		
+		La droite (AB) est donc parallèle à l'axe (OI).
+		
+		\item %La droite (CD) se trouve dans un plan $\mathcal{P}$ parallèle à l'un des plans (OIJ), (OIK) ou (OJK).
+				
+%Lequel ? On donnera une équation de ce plan $\mathcal{P}$.
+On a $x_C=x_D=11$ donc la droite (CD) est incluse dans le plan $\mathcal{P}$ d'équation $\boxed{\textcolor{red}{x=11}}$.
+
+		\item %Vérifier que la droite (AB), orthogonale au plan $\mathcal{P}$, coupe ce plan au point E$(11~;~-1~;~5)$.
+		(AB) est parallèle à (OI) et (OI) est orthogonale au plan $\mathcal{P}$ donc (AB) est orthogonale à $\mathcal{P}$.
+		
+		Le point d'intersection E a des coordonnées $(x~;~y~;~z) $ qui vérifient l'équation cartésienne de $\mathcal{P}$ et la représentation paramétrique de $\mathcal{P}$.
+		
+		On doit avoir : $\left\{\begin{array}{l}x=11\\x=t\\y=-1\\z=5\end{array}\right.$ donc $\boxed{\textcolor{red}{\text{E}(11~;~-1~;~5)}}$.
+		
+		\item %Les droites (AB) et (CD) sont-elles sécantes ?
+		Une représentation paramétrique de (AB) est $\left\{\begin{array}{l}x=t\\y=-1\\z=5\end{array}\right.,~t\in\mathbb{R}$ et une représentation paramétrique de (CD) est $\left\{\begin{array}{l c l}x&=&11\\y&=&0,8t'\\z&=&1+0,6t'\end{array}\right.,~t'\in~\mathbb{R}$.
+		On résout le système $\left\{\begin{array}{l c l}
+t&=&11\\-1&=&0,8t'\\5z&=&1+0,6t'\end{array}\right.$ qui n'a pas de solutions, car on trouve $t'$ négatif, donc $1+0,6t'<5$.
+		
+		Les droites (AB) et (CD) ne sont pas sécantes.
+	\end{enumerate}
+\item
+	\begin{enumerate}
+		\item %Montrer que $M_tN_t^2 = 2 t^2 - 25,2 t + 138$.
+		$\overrightarrow{M_tN_t}\begin{pmatrix}11-t\\0,8t+1\\0,6t-4\end{pmatrix}$ donc $M_tN_t^2= (11 - t)^2 + (0,8t + 1)^2+(0,6t - 4)^2$
+		
+$=121 - 22t + t^2 + 0,64t^2+ 1,6t + 1+ 0,36t^2-4,8t + 16 =$
+		
+$\boxed{\textcolor{red}{M_tN_t^2 = 2t^2-25,2t+138}}$.
+		
+		\item %À quel instant $t$ la longueur $M_tN_t$ est-elle minimale?
+		$M_tN_t$ est positif, donc est minimale quand son carré est minimal.
+		
+		\noindent On considère la fonction $f:t\mapsto 2t^2-25,2t+138$ ; $f$ est une fonction du second degré ; le coefficient de $t^2$ est 2. Le minimum est atteint pour $t=\dfrac{25,2}{4}=6,3$.
+		
+		\noindent La distance est \textbf{\textcolor{red}{minimale}} pour $\boxed{\textcolor{red}{t=6,3~ \text{s}}}$
+	\end{enumerate}
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{\textsc{Exercice 3 \hfill 5 points}}
+
+\textbf{Candidats n'ayant pas suivi l'enseignement de spécialité} 
+
+\medskip
+
+\begin{enumerate}
+\item %Résoudre dans l'ensemble $\C$ des nombres complexes l'équation CE) d'inconnue $z$ :
+%\[z^2 - 8z + 64 = 0.\]
+Soit l'équation $z^2 - 8z + 64 = 0$.
+
+\noindent $\Delta=64-4\times 64=-3\times 64<0$.
+
+\noindent L'équation a deux solutions complexes conjuguées :
+
+\noindent $z_1=\dfrac{8+\mathrm{i}\sqrt{3\times 64}}{2}=\boxed{\textcolor{red}{4+4\sqrt{3}}}$ et $z_2=\overline{z_1}=\boxed{\textcolor{red}{4-4\mathrm{i}\sqrt{3}}}$.
+
+Le plan complexe est muni d'un repère orthonormé direct $\left(O~;~\overrightarrow{u}~;~\overrightarrow{v}\right)$.
+
+\item On considère les points A, B et C d'affixes respectives $a = 4 + 4\text{i}\sqrt{3}$,\:  \\
+$b = 4 - 4\text{i}\sqrt{3}$ et $c = 8\text{i}$. (figure à la fin de l'exercice)
+
+	\begin{enumerate}
+		\item %Calculer le module et un argument du nombre $a$.
+		$\vert a\vert=\vert 4+4\mathrm{i}\sqrt{3}\vert=4\vert1+\mathrm{i}\sqrt{3}\vert=4\times 2=\boxed{\textcolor{red}{8}}$.
+		
+		On en déduit $a=8\left(\dfrac{1}{2}+\mathrm{i}\dfrac{\sqrt{3}}{2}\right)=8\mathrm{e}^{\mathrm{i}\frac\pi{3}}$. Un argument de $a$ est donc $\dfrac{\pi}{3}$.
+		
+		\item %Donner la forme exponentielle des nombres $a$ et $b$.
+		On a trouvé $a=8\mathrm{e}^{\mathrm{i}\frac\pi3}$ et  $b = \overline{a}=8\mathrm{e}^{-\mathrm{i}\frac{\pi}{3}}$.
+		
+		\item %Montrer que les points A, B et C sont sur un même cercle ce de centre O dont on déterminera le rayon.
+		$\vert a\vert=8$~;~$\vert b\vert=\left\vert \overline{a}\right\vert=\vert a\vert=8$ et $\vert c\vert=\vert8\mathrm{i}\vert=8$. Les points A, B et C sont donc sur le cercle de centre 0 et de rayon 8.
+		
+		\item %Placer les points A, B et C dans le repère -$\left(O~;~\overrightarrow{u}~;~\overrightarrow{v}\right)$.
+		Voir figure en fin d'exercice.
+	\end{enumerate}
+\smallskip
+		
+%Pour la suite de l'exercice, on pourra s'aider de la figure de la question \textbf{2. d.} complétée au fur et à mesure de l'avancement des questions.
+
+\item On considère les points A$'$, B$'$ et C$'$ d'affixes respectives $a' = a \text{e}^{\text{i}\frac{\pi}{3}}$, $b' = b\text{e}^{\text{i}\frac{\pi}{3}}$ et $c' = c\text{e}^{\text{i}\frac{\pi}{3}}$.
+	\begin{enumerate}
+		\item %Montrer que $b' = 8$.
+		$b'=b\mathrm{e}^{\mathrm{i}\frac\pi3}=8\mathrm{e}^{-\mathrm{i}\frac\pi3}\times \mathrm{e}^{\mathrm{i}\frac\pi3}=\boxed{\textcolor{red}{8}}$.
+		
+		\item %Calculer le module et un argument du nombre $a'$.
+		$\vert a' \vert=\left\vert a\mathrm{e}^{\mathrm{i}\frac\pi3} \right\vert=\vert a \vert\times \left\vert \mathrm{e}^{\mathrm{i}\frac\pi3} \right\vert=\vert a \vert=\boxed{\textcolor{red}{8}}$ car $\left\vert \mathrm{e}^{\mathrm{i}\theta}\right \vert=1$ pour tout $\theta$ réel.
+		
+		$\arg(a')=\arg\left(a\mathrm{e}^{\mathrm{i}\frac\pi3}\right)=\arg(a)+\arg\left(\mathrm{e}^{\mathrm{i}\frac\pi3}\right)=\dfrac{\pi}{3}+\dfrac{\pi}{3}=\boxed{\textcolor{red}{\dfrac{2\pi}{3}}}$
+	\end{enumerate}
+			
+Pour la suite on admet que $a' = -4 + 4\text{i}\sqrt{3}$ et $c' = - 4\sqrt{3} + 4\text{i}$.
+
+\item %On admet que si $M$ et $N$ sont deux points du plan d'affixes respectives $m$ et $n$ alors le milieu $I$ du segment $[MN]$ a pour affixe $\dfrac{m + n}{2}$ et la longueur $MN$ est égale à $|n - m|$.
+	\begin{enumerate}
+		\item On note $r$, $s$ et $t$ les affixes des milieux respectifs R, S et T des segments [A$'$B],\: [B$'$C] et [C$'$A].
+		
+%Calculer $r$ et $s$. On admet que $t = 2 - 2\sqrt{3} + \text{i}\left(2 + 2\sqrt{3}\right)$.
+On a : $r=\dfrac{a'+b}{2}=\dfrac{-4+4\mathrm{i}\sqrt{3}+4-4\mathrm{i}\sqrt{3}}{2}=\boxed{\textcolor{red}{0}}$.
+
+\noindent $s=\dfrac{b'+c}{2}=\dfrac{8+8\mathrm{i}}{2}=4+4\mathrm{i}$.
+
+\noindent On a admis que $t = 2 - 2\sqrt{3} + \text{i}\left(2 + 2\sqrt{3}\right)$.
+
+		\item %Quelle conjecture peut-on faire quant à la nature du triangle RST ? Justifier ce résultat.
+		Il semble que la figure que RST soit un triangle équilatéral.
+		
+\begin{enumerate}[$\bullet$]
+\item 		$RS=\vert s-r \vert=\vert 4+4\mathrm{i} \vert=4\vert 1+\mathrm{i} \vert=\boxed{\textcolor{red}{4\sqrt{2}}}$.
+
+\item $ST=\vert t-s \vert=\vert -2-2\sqrt{3}+\mathrm{i}\left(-2+2\sqrt{3}\right) \vert=2\vert -1-\sqrt{3}+\mathrm{i}\left(-1+\sqrt{3}\right) \vert\\
+=2\sqrt{\left(-1-\sqrt{3}\right)^2+\left(-1+\sqrt{3}\right)^2}=2\sqrt{\left(1+2\sqrt{3}+3+1-2\sqrt{3}+3\right)}=2\sqrt{8}\\
+=\boxed{\textcolor{red}{4\sqrt{2}}}$.
+
+\item $RT=\vert t-r \vert = \left\vert 2-2\sqrt{3}+\mathrm{i}(2+2\sqrt{3}) \right\vert\\
+=2\left\vert 1-\sqrt{3}+\mathrm{i}(1+\sqrt{3}) \right\vert = 2\sqrt{1 - 2\sqrt{3}+ 3 +1 + 2\sqrt{3} + 3} = 2\sqrt{8}\\
+=\boxed{\textcolor{red}{4\sqrt{2}}}$.
+\end{enumerate}
+
+$RS = ST = RT = 4\sqrt{2}$ donc le triangle RST est \textbf{\textcolor{red}{équilatéral}}.
+
+\end{enumerate}
+\end{enumerate}
+
+\bigskip
+\begin{center}
+\newrgbcolor{zzttqq}{0.6 0.2 0.}
+\psset{xunit=0.5cm,yunit=0.5cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-9.,-9.)(9.,9.)
+\pspolygon[linecolor=zzttqq,fillcolor=cyan!40,fillstyle=solid,opacity=0.1](0.,0.)(4.,4.)(-1.4641016151377544,5.464101615137755)
+\psellipse(0.,0.)(8.,8.)
+\psline(-4.,6.92820323027551)(4.,-6.928203230275509)
+\psline(8.,0.)(0.,8.)
+\psline(-6.928203230275509,4.)(4.,6.928203230275509)
+\psline[linecolor=zzttqq](0.,0.)(4.,4.)
+\psline[linecolor=zzttqq](4.,4.)(-1.4641016151377544,5.464101615137755)
+\psline[linecolor=zzttqq](-1.4641016151377544,5.464101615137755)(0.,0.)
+\psdots[dotstyle=*,linecolor=blue](4.,6.928203230275509)
+\rput[bl](4.169401790290362,7.161121938954711){\blue{$A$}}
+\psdots[dotstyle=*,linecolor=blue](4.,-6.928203230275509)
+\rput[bl](4.169401790290362,-6.701250295749133){\blue{$B$}}
+\psdots[dotstyle=*,linecolor=blue](0.,8.)
+\rput[bl](0.14612708998838755,8.236650819233457){\blue{$C$}}
+\psdots[dotstyle=*,linecolor=blue](0.,0.)
+\rput[bl](0.14612708998838755,0.22993582160278905){\blue{$O=R$}}
+\psdots[dotstyle=*,linecolor=blue](-4.,6.92820323027551)
+\rput[bl](-3.8373132073402996,7.161121938954711){\blue{$A'$}}
+\psdots[dotstyle=*,linecolor=blue](8.,0.)
+\rput[bl](8.15284208761905,0.22993582160278905){\blue{$B'$}}
+\psdots[dotstyle=*,linecolor=blue](-6.928203230275509,4.)
+\rput[bl](-6.785059027363528,4.253210521904767){\blue{$C'$}}
+\psdots[dotstyle=*,linecolor=darkgray](0.,0.)
+%\rput[bl](0.14612708998838755,0.22993582160278905){\darkgray{$R$}}
+\psdots[dotstyle=*,linecolor=darkgray](4.,4.)
+\rput[bl](4.169401790290362,4.253210521904767){\darkgray{$S$}}
+\psdots[dotstyle=*,linecolor=darkgray](-1.4641016151377544,5.464101615137755)
+\rput[bl](-1.28791141704994,5.6872490289430955){\darkgray{$T$}}
+\psgrid[subgriddiv=1](-9.,-9.)(9.,9.)
+\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=2.,Dy=2.,ticksize=-2pt 0,subticks=2,linewidth=2pt]{->}(0,0)(-9.,-9.)(9.,9.)
+
+\end{pspicture*}
+\end{center}
+
+\vspace{0,5cm}
+
+\textbf{\textsc{Exercice 3 \hfill 5 points}}
+
+\textbf{Candidats ayant  suivi l'enseignement de spécialité} 
+
+\medskip
+
+%\begin{enumerate}
+%\item On considère l'équation (E) à résoudre dans $\Z$ : 
+%
+%\[7 x - 5 y = 1.\]
+%
+%	\begin{enumerate}
+%		\item Vérifier que le couple (3~;~4) est solution de (E).
+%		\item Montrer que le couple d'entiers (x~;~y) est solution de (E) si et seulement si
+%$7(x - 3) = 5(y - 4)$.
+%		\item Montrer que les solutions entières de l'équation CE) sont exactement les couples $(x~;~y)$ d'entiers relatifs tels que :
+%		
+%\[\left\{\begin{array}{l c l}
+%x &=&5k + 3\\
+%y &=&7k + 4
+%\end{array}\right.\:où  k \in \Z.\]
+%	\end{enumerate}		
+%\item Une boîte contient 25 jetons, des rouges, des verts et des blancs. Sur les 25 jetons il y a $x$ jetons rouges et $y$ jetons verts. Sachant que $7x - 5 y = 1$, quels peuvent être les nombres de jetons rouges, verts et blancs ?
+%
+%\smallskip
+%
+%Dans la suite, on supposera qu'il y a 3 jetons rouges et 4 jetons verts.
+%\item On considère la marche aléatoire suivante d'un pion sur un triangle ABC. A chaque étape, on tire
+%au hasard un des jetons parmi les 25, puis on le remet dans la boîte.
+%Lorsqu'on est en A :
+%
+%Si le jeton tiré est rouge, le pion va en B. Si le jeton tiré est vert, le pion va en C. Si le jeton tiré est blanc, le pion reste en A.
+%
+%Lorsqu'on est en B :
+%
+%Si le jeton tiré est rouge, le pion va en A. Si le jeton tiré est vert, le pion va en C. Si le jeton tiré est blanc, le pion reste en B.
+%
+%Lorsqu'on est en C : Si le jeton tiré est rouge, le pion va en A. Si le jeton tiré est vert, le pion va en B. Si le jeton tiré est blanc, le pion reste en C.
+%
+%Au départ, le pion est sur le sommet A.
+%
+%Pour tout entier naturel $n$, on note $a_n$,\: $b_n$ et $c_n$ les probabilités que le pion soit respectivement sur les sommets A, B et C à l'étape $n$.
+%
+%On note $X_n$ la matrice ligne $\begin{pmatrix}a_n& b_n& c_n\end{pmatrix}$ et $T$ la matrice $\begin{pmatrix}0,72 &0,12 &0,16\\
+%0,12 &0,72 &0,16\\
+%0,12& 0,16& 0,72\end{pmatrix}$.
+%
+%Donner la matrice ligne $X_0$ et montrer que, pour tout entier naturel $n$,\: 
+%
+%$X_{n+1} = X_nT$.
+%\item  On admet que $T = PDP^{-1}$ où $P^{-1} = \begin{pmatrix}\frac{3}{10}&\frac{37}{110}&\frac{4}{11}\\ \frac{1}{10}&- \frac{1}{10}&0\\0&\frac{1}{11}&- \frac{1}{11}\end{pmatrix}$ et $D = \begin{pmatrix}1&0&0&\\0&0,6&0\\0&0&0,56\end{pmatrix}$.
+%	\begin{enumerate}
+%		\item À l'aide de la calculatrice, donner les coefficients de la matrice $P$. On pourra remarquer qu'ils sont entiers.
+%		\item Montrer que $T^n = PD^nP^{-1}$.
+%		\item Donner sans justification les coefficients de la matrice $D^n$.
+%		
+%On note $\alpha_n,\:\beta_n,\:\gamma_n$ les coefficients de la première ligne de la matrice $T^n$ ainsi :
+%		
+%\[T^n = \begin{pmatrix}\alpha_n&\beta_n&\gamma_n\\\ldots&\ldots&\ldots\\\ldots&\ldots&\ldots\end{pmatrix}.\]
+%
+%On admet que $\alpha_n = \dfrac{3}{10} + \dfrac{7}{10} \times 0,6^n$ et $\beta_n = \dfrac{37 - 77 \times 0,6^n + 40 \times 0,56^n}{110}$.
+%
+%On ne cherchera pas à calculer les coefficients de la deuxième ligne ni ceux de la troisième ligne.
+%	\end{enumerate}
+%\item  On rappelle que, pour tout entier naturel $n$,\: $X_n = X_0T^n$.
+%	\begin{enumerate}
+%		\item Déterminer les nombres $a_n$,\: $b_n$, à l'aide des coefficients $\alpha_n$ et $\beta_n$. En déduire $c_n$.
+%		\item Déterminer les limites des suites $\left(a_n\right)$,\: $\left(b_n\right)$ et $\left(c_n\right)$.
+%		\item Sur quel sommet a-t-on le plus de chance de se retrouver après un grand nombre d'itérations de cette marche aléatoire?
+%	\end{enumerate}
+%\end{enumerate}
+
+%\subsection*{Exercice 3 \hfill (5 points) \hfill Candidats ayant suivi l'enseignement de spécialité}
+
+\begin{enumerate}
+\item
+On considère l'équation (E) à résoudre dans $\Z$: $7x-5y=1$.
+	\begin{enumerate}
+		\item $7 \times 3 - 5\times 4 = 21-20=1$ donc $(3\,;\,4)$ est solution de (E).
+		\item% \null\\[-10pt]
+
+\begin{list}{\textbullet}{}
+\item
+$\begin{array}[t]{@{} l c !{-} c !{=} l}
+\text{Le couple } (x\,;\,y) \text{ est solution de (E) donc: } & 7\times x & 5 \times y & 1\\
+\text{Le couple } (3\,;\,4) \text{ est solution de (E) donc: } & 7\times 3 & 5 \times 4 & 1\\
+\cline{2-4} 
+\text{Par soustraction membre à membre: } & 7(x-3) & 5(y-4) & 0 
+\end{array}$ \\
+donc $7(x-3)=5(y-4)$.
+
+		\item Réciproquement, si le couple $(x\,;\,y)$ est tel que $7(x-3)=5(y-4)$, on peut dire que $7(x-3)-5(y-4) = 0 \iff 7x-21-5y+20 = 0 \iff 7x-5y=1$, et donc que le couple $(x\,;\,y)$ est solution de (E).
+		\item Donc le couple d'entiers $(x\,;\,y)$ est solution de (E) si et seulement si $7(x-3)=5(y-4)$.
+
+\end{list}
+
+\item
+\begin{list}{\textbullet}{}
+
+		\item
+Soit $(x\,;\, y)$ un couple d'entiers solution de (E), ce qui équivaut à $7(x-3)=5(y-4)$.
+
+$7(x-3)=5(y-4)$ entraîne que 7 divise $5(y-4)$; or 7 et 5 sont premiers entre eux, donc, d'après le théorème de Gauss, 7 divise $y-4$. Donc il existe un entier relatif $k$ tel que $y-4=7k$ ce qui équivaut à $y=7k+4$ avec $k\in \Z$.
+
+\smallskip
+
+Comme $7(x-3)=5(y-4)$ et $y-4=7k$, cela implique que $7(x-3)=5\times 7k$ ce qui équivaut à $x-3=5k$ ou encore $x=5k+3$.
+
+\smallskip
+
+Donc si $(x\,;\, y)$ est solution de (E), alors 
+$\left\lbrace 
+\begin{array}{l !{=} l}
+x & 5k+3\\
+y & 7k+4
+\end{array}
+\right. \text{ où } k \in \Z$
+
+\item
+Réciproquement, si le couple d'entiers $(x\,;\, y)$ est tel que 
+
+$\left\lbrace 
+\begin{array}{l !{=} l}
+x & 5k+3\\
+y & 7k+4
+\end{array}
+\right. \text{ où } k \in \Z$,
+alors $7x-5y= 7(5k+3)-5(7k+4) = 35k + 21 -35k -20 = 1$ donc $(x\,;\, y)$ est solution de (E).
+
+\item
+Donc les solutions entières de l'équation (E) sont exactement les couples $(x\,;\, y)$ d'entiers relatifs tels que
+
+$\left\lbrace 
+\begin{array}{l !{=} l}
+x & 5k+3\\
+y & 7k+4
+\end{array}
+\right. \text{ où } k \in~\Z$
+
+\end{list}
+
+
+\end{enumerate}
+
+\item
+Une boîte contient 25 jetons, des rouges, des verts et des blancs. Sur les 25 jetons il y a $x$ jetons rouges et $y$ jetons verts. On sait que $7x-5y=1$.
+
+D'après la question \textbf{1}, on peut dire que $x=5k+3$ et $y=7k+4$ avec $k$ entier relatif. Le nombre de jetons est un nombre positif, et ne doit pas dépasser 25 qui est le nombre total de jetons dans la boîte.
+
+Pour $k=0$, $x=3$ et $y=4$; il peut donc y avoir 3 jetons rouges, 4 jetons verts et $25-3-4=18$ jetons blancs.
+
+Pour $k=1$, $x=8$ et $y=11$; il peut donc y avoir 8 jetons rouges, 11 jetons verts et $25-8-11=6$ jetons blancs.
+
+Les autres valeurs de $k$ ne donnent pas de résultats répondant au problème.
+\end{enumerate}
+
+\textbf{Dans la suite, on supposera qu'il y a 3 jetons rouges et 4 jetons verts.}
+
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item 
+
+Comme au départ c'est-à-dire pour $n=0$, le pion est en A, on peut dire que $X_0=\begin{pmatrix} 1 & 0 & 0 \end{pmatrix}$.
+
+D'après le texte, on tire au hasard un pion dans la boîte, donc il y a équiprobabilité. Il y a 3 pions rouges sur 25 donc la probabilité de tirer un pion rouge est $\dfrac{3}{25}=0,12$. On calcule de même la probabilité de tirer un pion vert: $\dfrac{4}{25}=016$ et la probabilité de tirer un pion blanc: $\dfrac{18}{25}=0,72$.
+
+On cherche la probabilité $a_{n+1}$ qu'à l'étape $n+1$ le pion soit en A.
+
+S'il était en A à l'étape $n$, il faut tirer une boule blanche pour qu'il y reste, ce qui se fait avec une probabilité de 0,72. Comme il avait une probabilité égale à $a_{n}$ d'être en A à l'étape $n$, on retient $0,72a_{n}$.
+
+S'il était en B à l'étape $n$, il faut tirer une boule rouge pour qu'il passe en A, ce qui se fait avec une probabilité de 0,12. Comme il avait une probabilité égale à $b_{n}$ d'être en B à l'étape $n$, on retient $0,12b_{n}$.
+
+S'il était en C à l'étape $n$, il faut tirer une boule rouge pour qu'il passe en A, ce qui se fait avec une probabilité de 0,12. Comme il avait une probabilité égale à $c_{n}$ d'être en C à l'étape $n$, on retient $0,12c_{n}$.
+
+On peut donc dire que: $a_{n+1}=0,72a_n+0,12b_n+0,12c_n$.
+
+On justifie de la même façon $b_{n+1}$ et $c_{n+1}$ et l'on a :
+
+$\left\lbrace 
+\begin{array}{l !{=} c !{+} c !{+} c}
+a_{n+1} & 0,72 a_n & 0,12 b_n & 0,12 c_n\\
+b_{n+1} & 0,12 a_n & 0,72 b_n & 0,16 c_n\\
+c_{n+1} & 0,16 a_n & 0,16 b_n & 0,72 c_n
+\end{array}
+\right.$
+
+ce qui donne sous forme matricielle
+
+$\begin{pmatrix} a_{n+1} & b_{n+1} & c_{n+1} \end{pmatrix}
+=
+\begin{pmatrix} a_{n} & b_{n} & c_{n} \end{pmatrix}
+\times
+\begin{pmatrix} 
+0,72 & 0,12 & 0,16 \\
+0,12 & 0,72 & 0,16 \\
+0,12 & 0,16 & 0,72 
+\end{pmatrix}$
+
+soit $X_{n+1}=X_{n}T$ où 
+$T=
+\begin{pmatrix} 
+0,72 & 0,12 & 0,16 \\
+0,12 & 0,72 & 0,16 \\
+0,12 & 0,16 & 0,72 
+\end{pmatrix}$
+
+%\emph{La situation décrite dans le texte peut être modélisée par le graphe ci-dessous:}
+%
+%\begin{center}
+%\begin{pspicture}(-2,-6)(8,1)
+%%\psgrid[subgriddiv=2](0,0)(-2,-6)(8,1)
+%\psnode(0,0){A}{\red \boldmath A}
+%\psnode(6,0){B}{\boldmath B}
+%\psnode(3,-4.2){C}{\blue \boldmath C}
+%
+%\psset{nodesep=3pt,arcangle=15,arrowsize=2pt 3}
+%
+%\ncarc[linecolor=red]{->}{A}{B} \Aput{\red 0,12} 
+%\ncarc[linecolor=red]{->}{A}{C} \Aput{\red 0,16}
+%\nccircle[angleA=60,linecolor=red]{->}{A}{.5cm} \Bput{\red 0,72}
+%
+%\ncarc{->}{B}{A} \Aput{0,12}
+%\ncarc{->}{B}{C} \Aput{0,16} 
+%\nccircle[angleA=-60]{->}{B}{.5cm} \Bput{0,72}
+%
+%\ncarc[linecolor=blue]{->}{C}{A} \Aput{\blue 0,12} 
+%\ncarc[linecolor=blue]{->}{C}{B} \Aput{\blue 0,16}
+%\nccircle[angleA=180,linecolor=blue]{->}{C}{.5cm} \Bput{\blue 0,72}
+%
+%\end{pspicture}
+%\end{center}
+
+\item
+On admet que $T=PDP^{-1}$ où
+$P^{-1}=
+\begin{pmatrix} 
+\dfrac{3}{10} & \dfrac{37}{110} & \dfrac{4}{11} \\[7pt]
+\dfrac{1}{10} & -\dfrac{1}{10} & 0 \\[7pt]
+0 			  & \dfrac{1}{11} & -\dfrac{1}{11} 
+\end{pmatrix}$
+et
+$D=
+\begin{pmatrix} 
+1 & 0 & 0 \\
+0 & 0,6 & 0 \\
+0 & 0 & 0,56 
+\end{pmatrix}$
+
+\begin{enumerate}
+\item On sait que $P=\left (P^{-1}\right )^{-1}$; on cherche donc à la calculatrice l'inverse de la matrice $P^{-1}$ et on trouve:
+$P=
+\begin{pmatrix} 
+1 & 7 & 4 \\
+1 & -3 & 4 \\
+1 & -3 & -7 
+\end{pmatrix}$
+
+
+\item On va démontrer par récurrence sur $n$ ($n \geqslant 1$) la propriété $\mathcal P_n$: $T^n=PD^nP^{-1}$.
+
+\begin{list}{\textbullet}{}
+\item On sait que $T=PDP^{-1}$ donc $T=PD^1P^{-1}$ et donc la propriété est vraie au rang $n=1$.
+
+\item On suppose la propriété vraie à un rang $p$ ($p \geqslant 1)$, c'est-à-dire $T^p=PD^pP^{-1}$; c'est l'hypothèse de récurrence.
+
+On veut démontrer que la propriété est vraie au rang $p+1$.
+
+$T^{p+1} = T^p\times T$; d'après l'hypothèse de récurrence, $T^p=PD^nP^{-1}$ et on sait que $T=PDP^{-1}$.
+Donc $T^{p+1} = PD^pP^{-1}\times PDP^{-1} = PD^pP^{-1}PDP^{-1}= PD^{p+1}P^{-1}$
+et donc la propriété est vraie au rang $p+1$.
+
+\item La propriété est vraie au rang 1, elle est héréditaire, donc elle est vraie pour tout $n \geqslant 1$.
+
+\end{list}
+
+On a donc démontré que, pour tout $n\in \N^*$, $T^n=PD^nP^{-1}$.
+
+\item La matrice $D$ est une matrice diagonale; 
+$D^n=
+\begin{pmatrix} 
+1 & 0 & 0 \\
+0 & 0,6^n & 0 \\
+0 & 0 & 0,56^n 
+\end{pmatrix}$
+
+\end{enumerate}
+
+\end{enumerate}
+
+On note $\alpha_n$, $\beta_n$, $\gamma_n$ les coefficients de la première ligne de la matrice $T^n$; ainsi
+$T^n=
+\begin{pmatrix} 
+\alpha_n & \beta_n & \gamma_n \\
+\ldots & \ldots & \ldots \\
+\ldots & \ldots & \ldots 
+\end{pmatrix}$
+
+On admet que $\alpha_n = \dfrac{3}{10}+\dfrac{7}{10}\times 0,6^n$ et
+$\beta_n=\dfrac{37-77\times 0,6^n +40\times 0,56^n}{110}$.
+
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item On rappelle que, pour tout entier naturel $n$, $X_n=X_0T^n$.
+
+\begin{enumerate}
+ \item 
+ $X_n =
+ \begin{pmatrix} a_n & b_n & c_n \end{pmatrix}$
+ et 
+$X_0 =
+ \begin{pmatrix} 1 & 0 & 0 \end{pmatrix}$
+
+$X_n=X_0T^n
+\iff
+ \begin{pmatrix}  a_n & b_n & c_n  \end{pmatrix}
+ = 
+  \begin{pmatrix} 1 & 0 & 0 \end{pmatrix}
+  \times
+  \begin{pmatrix} 
+\alpha_n & \beta_n & \gamma_n \\
+\ldots & \ldots & \ldots \\
+\ldots & \ldots & \ldots 
+\end{pmatrix}\\
+\phantom{X_n=X_0T^n}
+\iff
+\begin{pmatrix}  a_n & b_n & c_n  \end{pmatrix}
+ = 
+\begin{pmatrix}  \alpha_n & \beta_n & \gamma_n  \end{pmatrix}
+$
+
+Donc $a_n=\alpha_n$ et $b_n=\beta_n$. Or comme à chaque étape, le pion est soit en A, soit en B, soit en C, $a_n+b_n+c_n=1$ et donc $c_n=1-a_n-b_n=1-\alpha_n-\beta_n$.
+
+\item
+$a_n=\dfrac{3}{10}+\dfrac{7}{10}\times 0,6^n$; or $-1<0,6<1$ donc 
+$\displaystyle\lim_{n \to +\infty}0,6^n=0$ d'où l'on déduit que 
+$\displaystyle\lim_{n \to +\infty} a_n=\dfrac{3}{10}$.
+
+$b_n==\dfrac{37-77\times 0,6^n +40\times 0,56^n}{110}$; or $- 1 < 0,56 < 1$ donc 
+$\displaystyle\lim_{n \to +\infty}0,56^n=0$ et comme 
+$\displaystyle\lim_{n \to +\infty}0,6^n=0$, on peut en déduire que
+$\displaystyle\lim_{n \to +\infty}b_n=\dfrac{37}{110}$.
+
+$c_n=1-a_n-b_n$ donc $\displaystyle\lim_{n \to +\infty}c_n = 1-\dfrac{3}{10} - \dfrac{37}{110} = \dfrac{4}{11}$.
+
+\item
+$\displaystyle\lim_{n \to +\infty}a_n=\dfrac{3}{10}=\dfrac{33}{110}$;
+$\displaystyle\lim_{n \to +\infty}b_n=\dfrac{37}{110}$ et
+$\displaystyle\lim_{n \to +\infty}c_n=\dfrac{4}{11}=\dfrac{40}{110}$
+
+Le sommet sur lequel on a le plus de chance de se retrouver après un grand nombre d'itérations est le sommet qui a la plus grande probabilité au rang $n$; c'est donc le sommet C.
+ \end{enumerate} 
+
+\end{enumerate}
+
+
+\vspace{0,5cm}
+
+\textbf{\textsc{Exercice 4 \hfill 6 points}}
+
+\textbf{Commun à tous les candidats} 
+
+\medskip
+
+\parbox{0.52\linewidth}{\psset{unit=0.2cm}
+\begin{pspicture}(-1.5,-1.5)(29,19)
+\psaxes[linewidth=1.pt,labels=none,tickstyle=bottom]{->}(0,0)(29,19)
+\psplot[plotpoints=5000,linewidth=1.25pt]{0}{20}{x 1 add ln x 1 add mul 3 x mul sub 7 add}
+\rput(7.07,7.07){\psplot[plotpoints=5000,linewidth=1.25pt]{0}{20}{x 1 add ln x 1 add mul 3 x mul sub 7 add}}
+\pspolygon(20,0)(27.07,7.07)(27.07,18.005)(20,10.935)%DD'C'C
+\psline(0,7.07)(7.07,14.14)%BB'
+\psline[linestyle=dashed](0,0)(7.07,7.07)(27.07,7.07)
+\psline[linestyle=dashed](7.07,7.07)(7.07,14.14)
+\uput[dl](0,0){O} \uput[ul](7.07,7.07){A} \uput[l](0,7.07){B} 
+\uput[ul](7.07,14.14){B$'$} \uput[dr](20,10.935){C} \uput[dr](27.07,18.005){C$'$} 
+\uput[d](20,0){D} \uput[dr](27.07,7.07){D$'$} \uput[d](1,0){I} 
+\uput[l](0,1){J}
+\end{pspicture} }\hfill 
+\parbox{0.45\linewidth}{Une municipalité a décidé d'installer un module de skateboard dans un parc de la commune.
+
+Le dessin ci-contre en fournit une perspective
+cavalière. Les quadrilatères OAD$'$D, DD$'$C$'$C, et OAB$'$B sont des rectangles.
+
+Le plan de face (OBD) est muni d'un repère orthonormé (O, I, J).
+
+L'unité est le mètre. La largeur du module est de 10 mètres, autrement dit, DD$'$ = 10, sa
+longueur OD est de 20~mètres.}
+\bigskip
+
+\textbf{Le but dit problème est de déterminer l'aire des différentes surfaces à peindre.}
+
+\medskip
+
+Le profil du module de skateboard a été modélisé à partir d'une photo par la fonction $f$ définie sur l'intervalle [0~;~20] par
+
+\[f(x) = (x + 1)\ln (x + 1) - 3x + 7.\]
+
+On note $f'$ la fonction dérivée de la fonction $f$ et $\mathcal{C}$ la courbe représentative de la fonction $f$ dans le repère (O, I, J).
+\medskip
+
+\textbf{Partie 1} 
+
+\begin{enumerate}
+\item %Montrer que pour tout réel $x$ appartenant à l'intervalle
+%[0~;~20], on a $f'(x) = \ln (x + 1) -2$.
+$f=u\ln(u)+v$ avec $u(x)=x+1$ et $v(x)=-2x+7$.
+
+\noindent $f$ est dérivable comme somme et composée de fonctions dérivables.
+
+\noindent $f'=u'\ln(u)+u\times \dfrac{u'}{u}+v'$ avec $u'(x)=1$ et $v'(x)=-3$ d'où $f'(x)=1\times \ln(x+1)+(x+1)\dfrac{1}{x+1}-3=\ln(x+1)+1-3$ donc $\boxed{\textcolor{red}{f'(x)=\ln(x+1)-2}}$.
+
+\item %En déduire les variations de $f$ sur l'intervalle [0 ; 20]
+%et dresser son tableau de variation.
+$f'(x)=0\iff \ln(x+1)=2\iff x+1-\mathrm{e}^{2}\iff x=\mathrm{e}^{2}-1$.
+
+\noindent $f'(x)>0\iff \ln (x+1)>2\iff x+1>\mathrm{e}^{2}$ (croissance de la fonction $\exp$) d'où $x>\mathrm{e}^{2}$-1.
+
+\noindent On en déduit le tableau de variation de $f$ :
+\begin{center}
+\begin{variations}
+x&0&&\mathrm{e}^{2}-1&&20\\
+\filet
+f'(x)&&-&\z&+&\\
+\filet
+\m{f(x)}&\h{7}&\d&f\left(\mathrm{e}^{2}-1\right)\approx 2,6&\c&\h{f(20)\approx 10,93}\\
+\filet
+\end{variations}
+\end{center}
+
+\item  %Calculer le coefficient directeur de la tangente à la courbe $\mathcal{C}$ au point d'abscisse $0$.
+$f'(0)=1\ln(1)-2=\boxed{\textcolor{red}{-2}}$.
+\end{enumerate}
+
+\medskip
+
+La valeur absolue de ce coefficient est appelée l'inclinaison du module de skateboard au point B.
+
+\textbf{4.} On admet que la fonction $g$ définie sur l'intervalle [0~;~20]  par
+
+\[g(x) = \dfrac{1}{2}(x + 1)^2 \ln (x + 1) - \dfrac{1}{4}x^2 - \dfrac{1}{2}x\]
+
+a pour dérivée la fonction   $g'$ définie sur l'intervalle
+[0~;~20] par \\
+$g'(x) = (x + 1)\ln (x + 1)$.
+
+$g$ est donc une primitive de $x\mapsto (x+1)\ln(x+1)$.
+
+%Déterminer une primitive de la fonction $f$ sur l'intervalle [0~;~20].
+Une primitive de $x\mapsto 3x-7$ est $x\mapsto \dfrac{3x^2}{2}+7x$.
+
+\noindent une primitive de $f$ est donc définie par :
+
+\noindent $F(x)=g(x)-\dfrac{3x^2}{2}+7x= \dfrac{1}{2}(x + 1)^2 \ln (x + 1) - \dfrac{1}{4}x^2 - \dfrac{1}{2}x-\dfrac{3x^2}{2}+7x=$
+
+$\boxed{\textcolor{red}{\dfrac{1}{2}(x + 1)^2 \ln (x + 1) -\dfrac{7x^2}{4}+\dfrac{13}{2}x}}$.
+
+\bigskip
+
+\textbf{Partie 2}
+
+\medskip
+
+\emph{Les trois questions de cette partie sont indépendantes}
+
+\medskip
+
+\begin{enumerate}
+\item Les propositions suivantes sont-elles exactes ? Justifier les réponses.
+
+\setlength\parindent{9mm}
+\begin{description}
+\item[ ] P$_1$ : %La différence de hauteur entre le point le plus haut et le point le plus bas de la piste est au moins égale à 8 mètres.
+La différence entre le point le plus haut et le point le plus bas de la piste est $f(20)-f\left(\mathrm{e}^{2}-1\right)\approx 10,93-2,6\approx 8,3>8$ donc $P_1$ est \textbf{\textcolor{red}{vraie}};
+
+\item[ ] P$_2$ : %L'inclinaison de la piste est presque deux fois plus grande en B qu'en C.
+L'inclinaison en B est 2. L'inclinaison en 20 est $f'(20)=\ln(21)-2\\
+\approx 1,04$, donc $P_2$ est \textbf{\textcolor{red}{vraie}}.
+\end{description}
+\setlength\parindent{0mm}
+
+\item %On souhaite recouvrir les quatre faces latérales de ce module d'une couche de peinture rouge. La peinture utilisée permet de couvrir une surface de 5 m$^2$ par litre.
+
+%Déterminer, à 1 litre près, le nombre minimum de litres de peinture nécessaires.
+$f$ est continue, donc la face avant, en unités d'aire, vaut 
+
+\noindent $\mathcal{A}_1=\int_0^{20}f(x)\text{ d}x=F(20)-F(0)$.
+
+\noindent $F(21)=\dfrac{21^2\ln 21}{2}-700+130=\dfrac{441\ln 21}{2}-570$.
+
+\noindent $F(0)=0$.
+
+\noindent On en déduit $\boxed{\textcolor{red}{\mathcal{A}_1=\dfrac{441\ln 21}{2}-570\approx 101,3}}$.
+
+\noindent L'aire latérale gauche vaut $\mathcal{A}_2=\mathcal{A}(OAB'B)=\boxed{\textcolor{red}{10f(0)=70}}$.
+
+\noindent L'aire latérale droite vaut $\mathcal{A}_3=\mathcal{A}(DD'C'C)=\boxed{\textcolor{red}{10f(20)=\approx 109,3}}$.
+
+L'aire à peindre en rouge est donc $\mathcal{A}=2\mathcal{A}_1+\mathcal{A}_2+\mathcal{A}_3\approx \boxed{\textcolor{red}{381,9~\text{m}^2}}$ .
+
+\noindent Le nombre de litres de peinture à prévoir est $\dfrac{381,9}{5}\approx \boxed{\textcolor{red}{77~}}$ 
+\medskip
+
+\parbox{0.48\linewidth}{
+\textbf{3.} On souhaite peindre en noir la piste roulante, autrement dit la surface supérieure
+du module.
+
+Afin de déterminer une valeur approchée de l'aire de la partie à peindre, on considère
+dans le repère (O, I, J) du plan de face, les points $B_k(k~;~f(k))$ pour $k$ variant de 0 à 20.
+
+Ainsi, $B_0 =$ B.
+
+
+
+}\hfill
+\parbox{0.48\linewidth}{\psset{unit=0.18cm}
+\begin{pspicture}(-1.5,-1.5)(29,19)
+\psaxes[linewidth=1.25pt,labels=none,tickstyle=bottom]{->}(0,0)(29,19)
+\psplot[plotpoints=5000,linewidth=1.25pt]{0}{20}{x 1 add ln x 1 add mul 3 x mul sub 7 add}
+\rput(7.07,7.07){\psplot[plotpoints=5000,linewidth=1.25pt]{0}{20}{x 1 add ln x 1 add mul 3 x mul sub 7 add}}
+\pspolygon(20,0)(27.07,7.07)(27.07,18.005)(20,10.935)%DD'C'C
+\psline(0,7.07)(7.07,14.14)%BB'
+\psline[linestyle=dashed](0,0)(7.07,7.07)(27.07,7.07)
+\psline[linestyle=dashed](7.07,7.07)(7.07,14.14)
+\uput[dl](0,0){\scriptsize O} \uput[ur](7.07,7.07){\scriptsize A} \uput[l](0,7.07){\scriptsize B} 
+\uput[ul](7.07,14.14){\scriptsize B$'$} \uput[dr](20,10.935){\scriptsize C} \uput[dr](27.07,18.005){\scriptsize C$'$} 
+\uput[d](20,0){\scriptsize D} \uput[dr](27.07,7.07){\scriptsize D$'$} \uput[d](1,0){\scriptsize I}
+\psline[linestyle=dashed,linewidth=0.6pt](1,5.39)(8.07,12.46)\uput[d](1,5.68){\scriptsize $B_1$}\uput[ur](7.8,12.06){\scriptsize $B'_1$}
+\psline[linestyle=dashed,linewidth=0.6pt](2,4.3)(9.07,11.37) \uput[d](2,4.54){\scriptsize $B_2$}\uput[ur](8.9,10.6){\scriptsize $B'_2$}
+\psline[linestyle=dashed,linewidth=0.6pt](7,2.64)(14.07,9.71)\uput[dl](7.8,2.94){\scriptsize $B_k$}\uput[ul](14.37,9.71){\scriptsize $B'_k$} 
+\psline[linestyle=dashed,linewidth=0.6pt](8,2.78)(15.07,9.85)\uput[d](9,3.33){\scriptsize $B_{k+1}$}\uput[u](15.9,9.85){\scriptsize $B'_{k+1}$}  
+\uput[l](0,1){\scriptsize J}
+\end{pspicture}}
+
+\medskip
+
+%On décide d'approcher l'arc de la courbe $\mathcal{C}$
+%allant de $B_k$ à $B_{k+1}$ par le segment $\left[B_kB_{k+1}\right]$.
+%
+%Ainsi l'aire de la surface à peindre sera  approchée par la somme des aires des
+%rectangles du type $B_k B_{k+1} B'_{k+1}B_k$ (voir figure).
+	\begin{enumerate}
+\item %Montrer que pour tout entier $k$ variant de 0 à 19, 
+		
+%		$B_kB_{k+1} = \sqrt{1 + [f(k + 1) - f(k)]^2}$.
+$B_kB_{k+1}=\sqrt{1^2+\left(f(k+1)-f(k)\right)^2}=\boxed{\textcolor{red}{\sqrt{1+\left(f(k+1)-f(k)\right)^2}}}$.
+
+\item% Compléter l'algorithme suivant pour qu'il affiche une estimation de l'aire de la partie roulante.
+%		
+%\begin{center}
+%\begin{tabularx}{0.8\linewidth}{|l|X|}\hline		
+%Variables 	&$S$ : réel\\
+%			&$K$ : entier\\
+%Fonction 	&$f$ : définie par $f(x) = (x + 1)\ln(x + 1)- 3x + 7$\\ \hline
+%Traitement	&$S$ prend pour valeur $0$\\
+%			&Pour $K$ variant de \ldots à \ldots\\
+%			&\hspace{1cm}$S$ prend pour valeur \ldots \ldots\\
+%			&Fin Pour\\ \hline
+%Sortie 		&Afficher \ldots\\ \hline
+%\end{tabularx}
+%\end{center}
+La partie de l'algorithme à compléter est :
+
+\noindent $S$ prend la valeur 0.
+
+\noindent Pour $K$ allant de 0 à 19
+
+$S$ prend la valeur $S+10\sqrt{1+\left(f(k+1)-f(k)\right)^2}$
+
+Afficher $S$
+	\end{enumerate}
+\end{enumerate}
+\end{document}

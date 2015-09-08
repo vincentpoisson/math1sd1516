@@ -1,0 +1,507 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage[scaled=0.875]{helvet} 
+\renewcommand{\ttdefault}{lmtt} 
+\usepackage{amsmath,amssymb,makeidx}
+\usepackage[normalem]{ulem}
+\usepackage{fancybox,graphicx}
+\usepackage{tabularx}
+\usepackage{ulem}
+\usepackage{dcolumn}
+\usepackage{textcomp}
+\usepackage{diagbox}
+\usepackage{tabularx}
+\usepackage{lscape}
+\newcommand{\euro}{\eurologo{}}
+%Tapuscrit : Denis Vergès relu et corrigé par François Hache
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pstricks-add}
+\setlength\paperheight{297mm}
+\setlength\paperwidth{210mm}
+\setlength{\textheight}{25cm}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+
+\newcommand{\vect}[1]{\mathchoice%
+{\overrightarrow{\displaystyle\mathstrut#1\,\,}}%
+{\overrightarrow{\textstyle\mathstrut#1\,\,}}%
+{\overrightarrow{\scriptstyle\mathstrut#1\,\,}}%
+{\overrightarrow{\scriptscriptstyle\mathstrut#1\,\,}}}
+\def\Oij{$\left(\text{O},~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O},~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\def\Ouv{$\left(\text{O}\,;~\vect{u},~\vect{v}\right)$}
+\setlength{\voffset}{-1,5cm}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{%
+pdfauthor = {APMEP},
+pdfsubject = {Baccalauréat S},
+pdftitle = {Métropole--La Réunion 22 juin 2015},
+allbordercolors = white,
+pdfstartview=FitH}   
+\thispagestyle{empty}
+\usepackage[frenchb]{babel}
+\usepackage[np]{numprint}
+\begin{document}
+\setlength\parindent{0mm}
+\marginpar{\rotatebox{90}{\textbf{A. P{}. M. E. P{}.}}}
+\rhead{\textbf{A. P{}. M. E. P{}.}}
+\lhead{\small Baccalauréat S }
+\rfoot{\small{Métropole--La Réunion}}
+\lfoot{\small{22 juin 2015}}
+\renewcommand \footrulewidth{.2pt}
+\pagestyle{fancy}
+\thispagestyle{empty}
+\begin{center} {\Large{\textbf{\decofourleft~Baccalauréat S Métropole--La Réunion 22 juin 2015~\decofourright
+}}} 
+
+\end{center}
+
+\vspace{0,5cm}
+
+\textbf{\textsc{Exercice 1 \hfill 6 points}}
+
+\textbf{Commun à tous les candidats} 
+
+\medskip
+
+\emph{Les résultats des probabilités seront arrondis à $10^{-3}$ près.}
+
+\bigskip
+
+\textbf{Partie 1}
+
+\medskip
+
+\begin{enumerate}
+\item Soit $X$ une variable aléatoire qui suit la loi exponentielle de paramètre $\lambda$, où $\lambda$ est un réel strictement positif donné.
+
+On rappelle que la densité de probabilité de cette loi est la fonction $f$  définie sur
+$[0~;~+ \infty[$ par 
+\[f(x) = \lambda\text{e}^{- \lambda x}.\]
+
+	\begin{enumerate}
+		\item Soit $c$ et $d$ deux réels tels que $0 \leqslant c < d$.
+		
+Démontrer que la probabilité $P( c \leqslant X \leqslant d)$ vérifie 
+\[P(c \leqslant X \leqslant d) = \text{e}^{- \lambda c}   - \text{e}^{- \lambda d}\]
+		\item Déterminer une valeur de $\lambda$ à $10^{-3}$ près de telle sorte que la probabilité $P(X > 20)$ soit égale à 0,05.
+		\item Donner l'espérance de la variable aléatoire $X$.
+
+\end{enumerate}
+		
+\textbf{Dans la suite de l'exercice on prend } \boldmath$\lambda = 0,15$\unboldmath.
+
+\begin{enumerate}
+\setcounter{enumii}{3}
+		\item Calculer $P(10 \leqslant X \leqslant 20)$.
+		\item Calculer la probabilité de l'évènement $(X > 18)$.
+	\end{enumerate}
+\item Soit $Y$ une variable aléatoire qui suit la loi normale d'espérance $16$ et d'écart type $1,95$.
+	\begin{enumerate}
+		\item Calculer la probabilité de l'événement $(20 \leqslant Y \leqslant 21)$.
+		\item Calculer la probabilité de l'événement $(Y < 11) \cup (Y > 21)$.
+	\end{enumerate}
+\end{enumerate}
+
+\bigskip
+	
+\textbf{Partie 2}
+	
+	\medskip
+	
+Une chaîne de magasins souhaite fidéliser ses clients en offrant des bons d'achat à ses clients
+privilégiés. Chacun d'eux reçoit un bon d'achat de couleur verte ou rouge sur lequel est inscrit un montant.
+	
+Les bons d'achats sont distribués de façon à avoir, dans chaque magasin, un quart de bons rouges et trois quarts de bons verts.
+	
+Les bons d'achat verts prennent la valeur de $30$~euros avec une probabilité égale à $0,067$ ou des valeurs comprises entre $0$ et $15$~euros avec des probabilités non précisées ici.
+	
+De façon analogue, les bons d'achat rouges prennent les valeurs $30$ ou $100$~euros avec des probabilités respectivement égales à $0,015$ et $0,010$ ou des valeurs comprises entre $10$ et $20$~euros avec des probabilités non précisées ici.
+
+\medskip
+
+\begin{enumerate}
+\item Calculer la probabilité d'avoir un bon d'achat d'une valeur supérieure ou égale à $30$~euros sachant qu'il est rouge.
+\item Montrer qu'une valeur approchée à $10^{-3}$ près de la probabilité d'avoir un bon d'achat d'une valeur supérieure ou égale à $30$~euros vaut $0,057$.
+
+\end{enumerate}
+
+\textbf{Pour la question suivante, on utilise cette valeur.}
+
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item Dans un des magasins de cette chaîne, sur $200$ clients privilégiés, $6$ ont reçu un bon d'achat d'une valeur supérieure ou égale à $30$~\euro.
+
+\smallskip
+
+Le directeur du magasin considéré estime que ce nombre est insuffisant et doute de la répartition
+au hasard des bons d'achats dans les différents magasins de la chaîne.
+
+Ses doutes sont-ils justifiés ?
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{\textsc{Exercice 2 \hfill 3 points}}
+
+\textbf{Commun à tous les candidats} 
+
+\medskip
+
+Dans un repère orthonormé (O,~I,~J,~K) d'unité 1 cm, on considère les points A$(0~;~-1~;~5)$,
+
+B$(2~;~-1~;~5)$, C$(11~;~0~;~1)$, D$(11~;~4~;~4)$.
+
+\medskip
+
+Un point $M$ se déplace sur la droite (AB) dans le sens de A vers B à la vitesse de 1~cm par seconde.
+
+Un point $N$ se déplace sur la droite (CD) dans le sens de C vers D à la vitesse de 1~cm par seconde.
+
+À l'instant $t = 0$ le point $M$ est en A et le point $N$ est en C.
+
+On note $M_t$ et $N_t$ les positions des points $M$ et $N$ au bout de $t$ secondes, $t$ désignant un nombre réel positif.
+
+On admet que $M_t$ et $N_t$, ont pour coordonnées : 
+
+$M_t(t~;~-1~;~5)$ et  $N_t(11~;~0,8t~;~1 + 0,6 t)$.
+
+\medskip
+
+\emph{Les questions $1$ et $2$ sont indépendantes.}
+
+\medskip
+
+\begin{enumerate}
+\item 
+	\begin{enumerate}
+		\item La droite (AB) est parallèle à l'un des axes (OI), (OJ) ou (OK). Lequel ?
+		\item La droite (CD) se trouve dans un plan $\mathcal{P}$ parallèle à l'un des plans (OIJ), (OIK) ou (OJK).
+		
+Lequel ? On donnera une équation de ce plan $\mathcal{P}$.
+		\item Vérifier que la droite (AB), orthogonale au plan $\mathcal{P}$, coupe ce plan au point E$(11~;~-1~;~5)$.
+		\item Les droites (AB) et (CD) sont-elles sécantes ?
+	\end{enumerate}
+\item
+	\begin{enumerate}
+		\item Montrer que $M_t^{}N_t ^2 = 2 t^2 - 25,2 t + 138$.
+		\item À quel instant $t$ la longueur $M_tN_t$ est-elle minimale ?
+	\end{enumerate}
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{\textsc{Exercice 3 \hfill 5 points}}
+
+\textbf{Candidats n'ayant pas suivi l'enseignement de spécialité} 
+
+\medskip
+
+\begin{enumerate}
+\item Résoudre dans l'ensemble $\C$ des nombres complexes l'équation (E) d'inconnue $z$ :
+\[z^2 - 8z + 64 = 0.\]
+
+Le plan complexe est muni d'un repère orthonormé direct \Ouv.
+\item On considère les points A, B et C d'affixes respectives $a = 4 + 4\text{i}\sqrt{3}$,
+
+$b = 4 - 4\text{i}\sqrt{3}$ et $c = 8\text{i}$.
+	\begin{enumerate}
+		\item Calculer le module et un argument du nombre $a$.
+		\item Donner la forme exponentielle des nombres $a$ et $b$.
+		\item Montrer que les points A, B et C sont sur un même cercle de centre O dont on déterminera le rayon.
+		\item Placer les points A, B et C dans le repère \Ouv.
+	\end{enumerate}
+	\end{enumerate}
+
+		
+Pour la suite de l'exercice, on pourra s'aider de la figure de la question \textbf{2. d.} complétée au fur et à mesure de l'avancement des questions.
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item On considère les points A$'$, B$'$ et C$'$ d'affixes respectives $a' = a \text{e}^{\text{i}\frac{\pi}{3}}$, $b' = b\text{e}^{\text{i}\frac{\pi}{3}}$ et $c' = c\text{e}^{\text{i}\frac{\pi}{3}}$.
+	\begin{enumerate}
+		\item Montrer que $b' = 8$.
+		\item Calculer le module et un argument du nombre $a'$.
+	\end{enumerate}
+\end{enumerate}
+				
+Pour la suite on admet que $a' = -4 + 4\text{i}\sqrt{3}$ et $c' = - 4\sqrt{3} + 4\text{i}$.
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+
+\item On admet que si $M$ et $N$ sont deux points du plan d'affixes respectives $m$ et $n$ alors le milieu $I$ du segment $[MN]$ a pour affixe $\dfrac{m + n}{2}$ et la longueur $MN$ est égale à $|n - m|$.
+	\begin{enumerate}
+		\item On note $r$, $s$ et $t$ les affixes des milieux respectifs R, S et T des segments [A$'$B],\: [B$'$C] et [C$'$A].
+		
+Calculer $r$ et $s$. On admet que $t = 2 - 2\sqrt{3} + \text{i}\left(2 + 2\sqrt{3}\right)$.
+		\item Quelle conjecture peut-on faire quant à la nature du triangle RST ? 
+		
+Justifier ce résultat.
+	\end{enumerate}
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{\textsc{Exercice 3 \hfill 5 points}}
+
+\textbf{Candidats ayant  suivi l'enseignement de spécialité} 
+
+\medskip
+
+\begin{enumerate}
+\item On considère l'équation (E) à résoudre dans $\Z$ : 
+
+\[7 x - 5 y = 1.\]
+
+	\begin{enumerate}
+		\item Vérifier que le couple (3~;~4) est solution de (E).
+		\item Montrer que le couple d'entiers $(x~;~y)$ est solution de (E) si et seulement si
+$7(x - 3) = 5(y - 4)$.
+		\item Montrer que les solutions entières de l'équation (E) sont exactement les couples $(x~;~y)$ d'entiers relatifs tels que :
+		
+\[\left\{\begin{array}{l !{=} l}
+x & 5k + 3\\
+y & 7k + 4
+\end{array}\right. \text{ où }  k \in \Z.\]
+	\end{enumerate}		
+\item Une boîte contient 25 jetons, des rouges, des verts et des blancs. Sur les 25 jetons il y a $x$ jetons rouges et $y$ jetons verts. Sachant que $7x - 5 y = 1$, quels peuvent être les nombres de jetons rouges, verts et blancs ?
+
+\end{enumerate}
+
+\textbf{Dans la suite, on supposera qu'il y a 3 jetons rouges et 4 jetons verts.}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item On considère la marche aléatoire suivante d'un pion sur un triangle ABC.
+À chaque étape, on tire au hasard un des jetons parmi les 25, puis on le remet dans la boîte.
+
+$\bullet~~$Lorsqu'on est en A :
+
+Si le jeton tiré est rouge, le pion va en B. Si le jeton tiré est vert, le pion va en C. Si le jeton tiré est blanc, le pion reste en A.
+
+$\bullet~~$Lorsqu'on est en B :
+
+Si le jeton tiré est rouge, le pion va en A. Si le jeton tiré est vert, le pion va en C. Si le jeton tiré est blanc, le pion reste en B.
+
+$\bullet~~$Lorsqu'on est en C : 
+
+Si le jeton tiré est rouge, le pion va en A. Si le jeton tiré est vert, le pion va en B. Si le jeton tiré est blanc, le pion reste en C.
+
+Au départ, le pion est sur le sommet A.
+
+Pour tout entier naturel $n$, on note $a_n$,\: $b_n$ et $c_n$ les probabilités que le pion soit respectivement sur les sommets A, B et C à l'étape $n$.
+
+On note $X_n$ la matrice ligne $\begin{pmatrix}a_n& b_n& c_n\end{pmatrix}$ et $T$ la matrice $\begin{pmatrix}0,72 &0,12 &0,16\\
+ 0,12 &0,72 &0,16\\
+0,12& 0,16& 0,72\end{pmatrix}$.
+
+Donner la matrice ligne $X_0$ et montrer que, pour tout entier naturel $n$,\: 
+ 
+ $X_{n+1} = X_nT$.
+\item  On admet que $T = PDP^{-1}$ où $P^{-1} = \begin{pmatrix}\frac{3}{10}&\frac{37}{110}&\frac{4}{11}\\[3pt] 
+\frac{1}{10}&- \frac{1}{10}&0\\[3pt]
+0&\frac{1}{11}&- \frac{1}{11}\end{pmatrix}$
+et $D = \begin{pmatrix}1&0&0&\\0&0,6&0\\0&0&0,56\end{pmatrix}$.
+	\begin{enumerate}
+		\item À l'aide de la calculatrice, donner les coefficients de la matrice $P$. On pourra remarquer qu'ils sont entiers.
+		\item Montrer que $T^n = PD^nP^{-1}$.
+		\item Donner sans justification les coefficients de la matrice $D^n$.
+	\end{enumerate}
+	\end{enumerate}
+		
+On note $\alpha_n,\:\beta_n,\:\gamma_n$ les coefficients de la première ligne de la matrice $T^n$ ainsi :
+		
+\[T^n = \begin{pmatrix}\alpha_n&\beta_n&\gamma_n\\\ldots&\ldots&\ldots\\\ldots&\ldots&\ldots\end{pmatrix}\]
+
+On admet que $\alpha_n = \dfrac{3}{10} + \dfrac{7}{10} \times 0,6^n$ et $\beta_n = \dfrac{37 - 77 \times 0,6^n + 40 \times 0,56^n}{110}$.\\[5pt]
+On ne cherchera pas à calculer les coefficients de la deuxième ligne ni ceux de la troisième ligne.
+
+	\begin{enumerate}
+	\setcounter{enumi}{4}
+\item  On rappelle que, pour tout entier naturel $n$,\: $X_n = X_0T^n$.
+	\begin{enumerate}
+		\item Déterminer les nombres $a_n$,\: $b_n$, à l'aide des coefficients $\alpha_n$ et $\beta_n$. En déduire $c_n$.
+		\item Déterminer les limites des suites $\left(a_n\right)$,\: $\left(b_n\right)$ et $\left(c_n\right)$.
+		\item Sur quel sommet a-t-on le plus de chance de se retrouver après un grand nombre d'itérations de cette marche aléatoire?
+	\end{enumerate}
+\end{enumerate}
+
+\vspace{0,5cm}
+
+\textbf{\textsc{Exercice 4 \hfill 6 points}}
+
+\textbf{Commun à tous les candidats} 
+
+\medskip
+
+\parbox{0.52\linewidth}{\psset{unit=0.2cm}
+\begin{pspicture}(-1.5,-1.5)(29,19)
+\psaxes[linewidth=1.pt,labels=none,tickstyle=bottom]{->}(0,0)(29,19)
+\psplot[plotpoints=5000,linewidth=1.25pt]{0}{20}{x 1 add ln x 1 add mul 3 x mul sub 7 add}
+\rput(7.07,7.07){\psplot[plotpoints=5000,linewidth=1.25pt]{0}{20}{x 1 add ln x 1 add mul 3 x mul sub 7 add}}
+\pspolygon[showpoints](20,0)(27.07,7.07)(27.07,18.005)(20,10.935)%DD'C'C
+\psline[showpoints](0,7.07)(7.07,14.14)%BB'
+\psline[showpoints,linestyle=dashed](0,0)(7.07,7.07)(27.07,7.07)
+\psline[linestyle=dashed,showpoints](7.07,7.07)(7.07,14.14)
+\uput[dl](0,0){O} \uput[ul](7.07,7.07){A} \uput[l](0,7.07){B} 
+\uput[ul](7.07,14.14){B$'$} \uput[dr](20,10.935){C} \uput[dr](27.07,18.005){C$'$} 
+\uput[d](20,0){D} \uput[dr](27.07,7.07){D$'$} \uput[d](1,0){I} 
+\uput[l](0,1){J}
+\end{pspicture} }\hfill 
+\parbox{0.45\linewidth}{Une municipalité a décidé d'installer un module de skateboard dans un parc de la commune.
+
+Le dessin ci-contre en fournit une perspective
+cavalière. Les quadrilatères OAD$'$D, DD$'$C$'$C, et OAB$'$B sont des rectangles.
+
+Le plan de face (OBD) est muni d'un repère orthonormé (O, I, J).
+
+L'unité est le mètre. La largeur du module est de 10 mètres, autrement dit, DD$'$ = 10, sa
+longueur OD est de 20~mètres.}
+\bigskip
+
+\textbf{Le but dit problème est de déterminer l'aire des différentes surfaces à peindre.}
+
+\medskip
+
+Le profil du module de skateboard a été modélisé à partir d'une photo par la fonction $f$ définie sur l'intervalle [0~;~20] par
+
+\[f(x) = (x + 1)\ln (x + 1) - 3x + 7.\]
+
+On note $f'$ la fonction dérivée de la fonction $f$ et $\mathcal{C}$ la courbe représentative de la fonction $f$ dans le repère (O, I, J).
+\medskip
+
+\parbox{0.52\linewidth}{\textbf{Partie 1} 
+
+\begin{enumerate}
+\item Montrer que pour tout réel $x$ appartenant à l'intervalle
+[0~;~20], on a $f'(x) = \ln (x + 1) -2$.
+\item En déduire les variations de $f$ sur l'intervalle [0 ; 20]
+et dresser son tableau de variation.
+\item  Calculer le coefficient directeur de la tangente à la courbe $\mathcal{C}$ au point d'abscisse $0$.
+
+La valeur absolue de ce coefficient est appelée l'inclinaison du module de skateboard au point B.
+ \end{enumerate}}
+\hfill
+\parbox{0.45\linewidth}{\psset{unit=0.222cm}
+\begin{pspicture}(-1.5,-1.5)(23,13.5)
+\psaxes[linewidth=1.25pt,labels=none,tickstyle=bottom]{->}(0,0)(23,13.5)
+\psplot[plotpoints=5000,linewidth=1.25pt]{0}{20}{x 1 add ln x 1 add mul 3 x mul sub 7 add}
+\uput[u](15,7){$\mathcal{C}$}\uput[d](20,0){D}\uput[l](0,7.07){B}\uput[dr](20,10.935){C}\uput[dl](0,0){O}\uput[d](1,0){I} 
+\uput[l](0,1){J}  
+\end{pspicture}}
+
+\medskip
+ 
+ 
+\textbf{4.} On admet que la fonction $g$ définie sur l'intervalle [0~;~20]  par
+
+\[g(x) = \dfrac{1}{2}(x + 1)^2 \ln (x + 1) - \dfrac{1}{4}x^2 - \dfrac{1}{2}x\]
+
+a pour dérivée la fonction   $g'$ définie sur l'intervalle
+[0~;~20] par $g'(x) = (x + 1)\ln (x + 1)$.
+
+Déterminer une primitive de la fonction $f$ sur l'intervalle [0~;~20].
+
+\bigskip
+
+\textbf{Partie 2}
+
+\medskip
+
+\emph{Les trois questions de cette partie sont indépendantes}
+
+\medskip
+
+\begin{enumerate}
+\item Les propositions suivantes sont-elles exactes ? Justifier les réponses.
+
+\setlength\parindent{9mm}
+\begin{description}
+\item[ ] P$_1$ : La différence de hauteur entre le point le plus haut et le point le plus bas de la piste est au moins égale à 8 mètres.
+\item[ ] P$_2$ : L'inclinaison de la piste est presque deux fois plus grande en B qu'en C.
+\end{description}
+\setlength\parindent{0mm}
+
+\item On souhaite recouvrir les quatre faces latérales de ce module d'une couche de peinture rouge. La peinture utilisée permet de couvrir une surface de 5 m$^2$ par litre.
+
+Déterminer, à 1 litre près, le nombre minimum de litres de peinture nécessaires.
+
+\medskip
+
+\item~
+
+\parbox{0.48\linewidth}{On souhaite peindre en noir la piste roulante, autrement dit la surface supérieure
+du module.
+
+Afin de déterminer une valeur approchée de l'aire de la partie à peindre, on considère
+dans le repère (O, I, J) du plan de face, les points $B_k(k~;~f(k))$ pour $k$ variant de 0 à 20.
+
+Ainsi, $B_0 =$ B.
+
+
+
+}\hfill
+\parbox{0.48\linewidth}{\psset{unit=0.18cm}
+\begin{pspicture}(-1.5,-1.5)(29,19)
+\psaxes[linewidth=1.25pt,labels=none,tickstyle=bottom]{->}(0,0)(29,19)
+\psplot[plotpoints=5000,linewidth=1.25pt]{0}{20}{x 1 add ln x 1 add mul 3 x mul sub 7 add}
+\rput(7.07,7.07){\psplot[plotpoints=5000,linewidth=1.25pt]{0}{20}{x 1 add ln x 1 add mul 3 x mul sub 7 add}}
+\pspolygon(20,0)(27.07,7.07)(27.07,18.005)(20,10.935)%DD'C'C
+\psline(0,7.07)(7.07,14.14)%BB'
+\psline[linestyle=dashed](0,0)(7.07,7.07)(27.07,7.07)
+\psline[linestyle=dashed](7.07,7.07)(7.07,14.14)
+\uput[dl](0,0){\scriptsize O} \uput[ur](7.07,7.07){\scriptsize A} \uput[l](0,7.07){\scriptsize B} 
+\uput[ul](7.07,14.14){\scriptsize B$'$} \uput[dr](20,10.935){\scriptsize C} \uput[dr](27.07,18.005){\scriptsize C$'$} 
+\uput[d](20,0){\scriptsize D} \uput[dr](27.07,7.07){\scriptsize D$'$} \uput[d](1,0){\scriptsize I}
+\psline[linestyle=dashed,linewidth=0.6pt](1,5.39)(8.07,12.46)\uput[d](1,5.68){\scriptsize $B_1$}\uput[ur](7.8,12.06){\scriptsize $B'_1$}
+\psline[linestyle=dashed,linewidth=0.6pt](2,4.3)(9.07,11.37) \uput[d](2,4.54){\scriptsize $B_2$}\uput[ur](8.9,10.6){\scriptsize $B'_2$}
+\psline[linestyle=dashed,linewidth=0.6pt](7,2.64)(14.07,9.71)\uput[dl](7.8,2.94){\scriptsize $B_k$}\uput[ul](14.37,9.71){\scriptsize $B'_k$} 
+\psline[linestyle=dashed,linewidth=0.6pt](8,2.78)(15.07,9.85)\uput[d](9,3.33){\scriptsize $B_{k+1}$}\uput[u](15.9,9.85){\scriptsize $B'_{k+1}$}  
+\uput[l](0,1){\scriptsize J}
+\end{pspicture}}
+
+\medskip
+
+On décide d'approcher l'arc de la courbe $\mathcal{C}$
+allant de $B_k$ à $B_{k+1}$ par le segment $\biggl[B_kB_{k+1}\biggr]$.
+
+Ainsi l'aire de la surface à peindre sera  approchée par la somme des aires des
+rectangles du type $B_k B_{k+1} B'_{k+1}B_k$ (voir figure).
+	\begin{enumerate}
+		\item Montrer que pour tout entier $k$ variant de 0 à 19, 
+		
+		$B_kB_{k+1} = \displaystyle\sqrt{1 + \left (f(k + 1) - f(k)\right )^2}$.
+		\item Compléter l'algorithme suivant pour qu'il affiche une estimation de l'aire de la partie roulante.
+		
+\begin{center}
+\begin{tabularx}{0.9\linewidth}{|l|X|}\hline		
+Variables 	&$S$ : réel\\
+			&$K$ : entier\\
+Fonction 	&$f$ : définie par $f(x) = (x + 1)\ln(x + 1)- 3x + 7$\\ \hline
+Traitement	&$S$ prend pour valeur $0$\\
+			&Pour $K$ variant de \ldots \:à\: \ldots\\
+			&\hspace{1cm}$S$ prend pour valeur \:\ldots \ldots\\
+			&Fin Pour\\ \hline
+Sortie 		&Afficher \ldots\\ \hline
+\end{tabularx}
+\end{center}
+	\end{enumerate}
+\end{enumerate}
+
+\end{document}
