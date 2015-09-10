@@ -1,6 +1,0 @@
-\beamer@endinputifotherversion {3.24pt}
-\beamer@sectionintoc {1}{Rappels de la classe de seconde.}{2}{0}{1}
-\beamer@subsectionintoc {1}{1}{Variations de fonctions.}{2}{0}{1}
-\beamer@subsectionintoc {1}{2}{Trin\IeC {\^o}me du second degr\IeC {\'e}.}{10}{0}{1}
-\beamer@subsectionintoc {1}{3}{Variations d'un trin\IeC {\^o}me du second degr\IeC {\'e}}{26}{0}{1}
-\beamer@sectionintoc {2}{Intersection d'une parabole avec l'axe des abscisses.}{27}{0}{2}

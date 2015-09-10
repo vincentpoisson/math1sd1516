@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Fonctions polyn\IeC {\^o}mes de degr\IeC {\'e} 2.}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Trin\IeC {\^o}me du second degr\IeC {\'e}.}{9}{0}{1}
+\beamer@subsectionintoc {1}{2}{Variations d'un trin\IeC {\^o}me du second degr\IeC {\'e}}{25}{0}{1}
+\beamer@sectionintoc {2}{Racines et factorisation.}{32}{0}{2}
+\beamer@sectionintoc {3}{Intersection d'une parabole avec l'axe des abscisses.}{61}{0}{3}
