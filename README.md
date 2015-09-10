@@ -12,10 +12,14 @@ Lien vers la présentation du cours du chapitre en cours:
 
 https://github.com/mathlorgues/math1sd1516/blob/master/Chapitres/Chapitre1/presentations/secondDegre.pdf
 
-Lien vers la version imprimable du chapitre:
+Lien vers la version imprimable du chapitre en cours:
 
 https://github.com/mathlorgues/math1sd1516/blob/master/Chapitres/Chapitre1/polycopies/secondDegre.pdf
 
 Lien vers les compétences attendues pour le chapitre en cours:
 
 https://github.com/mathlorgues/math1sd1516/blob/master/Chapitres/Chapitre1/competences.pdf
+
+Lien vers un petit guide sur git :
+
+http://rogerdudler.github.io/git-guide/index.fr.html
